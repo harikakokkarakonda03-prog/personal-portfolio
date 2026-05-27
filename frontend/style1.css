@@ -1,0 +1,55 @@
+body{
+    background-color:purple;
+    color:white;
+}
+h1{
+font-family:times New Roman;
+}
+div{
+    display: flex;
+    gap:20px
+}
+a{
+    color: white;
+}
+.section1 pre{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    gap:50px;
+}
+ form{
+    display:flex;
+    flex-direction:column;
+    font-size: 30px;
+    gap:30px;
+ }
+ .name{
+    display: flex;
+ }
+ .name input{
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+ .name div{
+     display: flex;
+     flex-direction: column;
+ }
+ .checkbox{
+    display: flex;
+    flex-direction: column;
+ }
+ .checkbox div{
+    display: flex;
+ }
+ .checkbox textarea{
+    width: 100%;
+    height:100px;
+ }
+ .checkbox button{
+    width: 50%;
+    height:50px;
+ }
+ 
+ 

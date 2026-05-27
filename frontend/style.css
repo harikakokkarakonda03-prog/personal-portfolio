@@ -1,0 +1,83 @@
+body{
+    background-color:purple;
+}
+h1{
+
+    color:white;
+font-family:times New Roman;
+ }
+ a{
+    color: white;
+ }
+ .circle{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+}
+
+hr{
+    width: 200px;
+    border: 2px solid white;
+    margin-left: 100px;
+}
+
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 30;
+}
+.head-section{
+     display: flex;
+    align-items: flex-start;gap: 60px;
+    padding: 50px;
+    color:white;
+    gap:400px;
+}
+.about-section{
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    margin-left: 200px;
+}
+.section1{
+    display:flex;
+    gap:50px;
+}
+.section1 div{
+    margin-top: 30px;
+}
+
+hr{
+    width: 300px;
+    border: 1px solid white;
+    margin-top: 15px;
+}
+
+h2{
+    color: white;
+    font-size: 35px;
+    margin: 0;
+}
+
+p{
+    color: white;
+    font-size: 22px;
+    line-height: 2;
+    width:700px;
+    margin:0px;
+}
+.section2{
+    display:flex;
+    align-items: center;
+    font-size: xx-large;
+    gap:50px;
+}
+.button{
+    padding:5px 10px;
+    font-size:20px;
+}
+
+
+
+
+

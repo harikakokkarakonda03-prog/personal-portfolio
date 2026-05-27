@@ -1,0 +1,282 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="style1.css">
+
+</head>
+
+<body>
+
+    <h1>Harika Kokkarakonda</h1>
+
+    <div>
+
+        <section class="section1">
+
+            <h1 style="font-size: 60px;">contact me!</h1>
+
+            <pre>
+<h2>
+Have any questions? Fill out the 
+form and I’ll get you a response soon!
+</h2>
+            </pre>
+
+            <pre>
+Feel free to ask / inquire about anything
+(school, basketball, internships, music, etc).
+Hoping to be a resource and be of help
+in your journey in any way possible.
+            </pre>
+
+            <pre>
+Similarly, please use this form or email
+directly me if your message regards
+a NIL opportunity.
+            </pre>
+
+            <a href="mailto:hariakakokkarakonda03@gmail.com">
+
+                hariakakokkarakonda03@gmail.com
+
+            </a>
+
+        </section>
+
+
+
+        <section class="section2">
+
+            <form onsubmit="sendMessage(event)">
+
+                <label>Name</label>
+
+                <div class="name">
+
+                    <div>
+
+                        <label>First name(required)</label>
+
+                        <input
+                        type="text"
+                        id="first_name"
+                        placeholder="first name">
+
+                    </div>
+
+
+
+                    <div>
+
+                        <label>Last name(required)</label>
+
+                        <input
+                        type="text"
+                        id="last_name"
+                        placeholder="last name">
+
+                    </div>
+
+                </div>
+
+
+
+                <label>Email(required)</label>
+
+                <input
+                type="text"
+                id="email"
+                placeholder="email">
+
+
+
+                <label>Which are you?(required)</label>
+
+
+
+                <div class="checkbox">
+
+                    <div>
+
+                        <input
+                        type="checkbox"
+                        id="student">
+
+                        <span>Student</span>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <input
+                        type="checkbox"
+                        id="recruiter">
+
+                        <span>Recruiter</span>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <input
+                        type="checkbox"
+                        id="company">
+
+                        <span>Company (NIL)</span>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <input
+                        type="checkbox"
+                        id="others">
+
+                        <span>Others</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <label>Message(required)</label>
+
+                <textarea id="message"></textarea>
+
+
+
+                <button type="submit">
+
+                    Send
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+
+<script>
+
+async function sendMessage(event){
+
+    event.preventDefault();
+
+
+
+    let firstName =
+
+    document.getElementById("first_name").value;
+
+
+
+    let lastName =
+
+    document.getElementById("last_name").value;
+
+
+
+    let email =
+
+    document.getElementById("email").value;
+
+
+
+    let message =
+
+    document.getElementById("message").value;
+
+
+
+    let role = "";
+
+
+
+    if(document.getElementById("student").checked){
+
+        role = "Student";
+
+    }
+
+    else if(document.getElementById("recruiter").checked){
+
+        role = "Recruiter";
+
+    }
+
+    else if(document.getElementById("company").checked){
+
+        role = "Company";
+
+    }
+
+    else{
+
+        role = "Others";
+
+    }
+
+
+
+    const response = await fetch(
+
+        "http://localhost:5000/contact",
+
+        {
+
+            method: "POST",
+
+
+
+            headers: {
+
+                "Content-Type": "application/json"
+
+            },
+
+
+
+            body: JSON.stringify({
+
+                first_name: firstName,
+
+                last_name: lastName,
+
+                email: email,
+
+                role_type: role,
+
+                message: message
+
+            })
+
+        }
+
+    );
+
+
+
+    const data = await response.text();
+
+
+
+    alert(data);
+
+}
+
+</script>
+
+</body>
+
+</html>
